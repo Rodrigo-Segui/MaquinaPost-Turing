@@ -14,4 +14,5 @@ class Leitor:
         self.arquivo = open(arquivo, "r")
         print(self.arquivo.read())
        # self.leDados()
+       #L
         self.arquivo.close()
