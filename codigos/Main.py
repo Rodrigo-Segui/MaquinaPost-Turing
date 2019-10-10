@@ -5,7 +5,7 @@ def main():
     #try:
         if(len(sys.argv) != 3):
             print("Modo de execucao: ./Main.py <arquivo-de-entrada> <arquivo-de-saida>")
-            print("Obs: O arquivo de entrada deve estar no diretorio \"arquivos/estradas\" "
+            print("Obs: O arquivo de entrada deve estar no diretorio: \"arquivos/estradas\" "
                    + "deste projeto")
             return
 
