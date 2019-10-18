@@ -17,5 +17,9 @@ def main():
         mp = Post(leituraMP.alfabeto,leituraMP.partida,leituraMP.leituras,leituraMP.escritas,leituraMP.desvios)
         for i in range(len(leituraMP.alfabeto)):
             print('alfabeto : ' + leituraMP.alfabeto[i])
+        print('DESVIOS')
+        print(leituraMP.desvios)
+        print('ESCRITAS')
+        print(leituraMP.escritas)
 
 main()

@@ -56,6 +56,7 @@ class Leitor:
             self.escritas.append(dados)
         #self.escritas.append(re.compile(r"(\w+|#)").findall(self.linhas[-2]))
         #print(self.escritas) #pega a ultima transicao
+        
     
     def leDesvios(self):
         self.desvios = []
