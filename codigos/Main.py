@@ -2,6 +2,8 @@
 import sys
 from classes.Leitor import Leitor
 from classes.post.Post import Post
+from classes.Conversor import Conversor
+#from classes.Escritor import Escritor
 def main():
     #try:
         if(len(sys.argv) != 3):
@@ -14,12 +16,14 @@ def main():
         #saida = "../arquivos/saidas/" + sys.argv[2]
 
         leituraMP = Leitor(entrada)
-        mp = Post(leituraMP.alfabeto,leituraMP.partida,leituraMP.leituras,leituraMP.escritas,leituraMP.desvios)
-        for i in range(len(leituraMP.alfabeto)):
-            print('alfabeto : ' + leituraMP.alfabeto[i])
-        print('DESVIOS')
-        print(leituraMP.desvios)
-        print('ESCRITAS')
-        print(leituraMP.escritas)
+        mp = Post(leituraMP.alfabeto,leituraMP.partida,leituraMP.leituras,leituraMP.escritasEleituras)
+       # for i in range(len(leituraMP.alfabeto)):
+         #   print('alfabeto : ' + leituraMP.alfabeto[i])
+       # print('Escritas e leituras')
+       # print(leituraMP.escritasEleituras)
+
+        conversor = Conversor(mp)
+        #Escritor(saida, conversor.turing)
+       
 
 main()

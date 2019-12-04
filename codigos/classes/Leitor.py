@@ -5,8 +5,8 @@ class Leitor:
     linhas = None
     partida = None
     leituras = None
-    escritas = None
-    desvios = None
+    escritasEleituras = None
+   # desvios = None
     alfabeto = None
     
     
@@ -23,8 +23,8 @@ class Leitor:
         self.leAlfabeto()
         self.lePartida()
         self.leLeituras()
-        self.leEscritas()
-        self.leDesvios()
+        self.leEscritasELeituras()
+       # self.leDesvios()
 
     def leAlfabeto(self):
         aux = re.compile(r"(\w+|#)")
@@ -45,28 +45,28 @@ class Leitor:
     #    print(self.leituras)# lista com estados
     
     
-    def leEscritas(self):
-        self.escritas = []
+    def leEscritasELeituras(self):
+        self.escritasEleituras = []
         dados = 'jkj'
-        #for i in range(4, len(self.linhas) - 2): #6 (a numero de linhas -2)
-        for i in range(4,20):#problema -- tem que parar quando acabar escritas
+        for i in range(4, len(self.linhas) - 2): #6 (a numero de linhas -2)
+        #for i in range(4,20):#problema -- tem que parar quando acabar escritas
             aux = re.compile(r"(\w+|#)")
             dados = aux.findall(self.linhas[i][:-1])
             #print(dados)
-            self.escritas.append(dados)
-        #self.escritas.append(re.compile(r"(\w+|#)").findall(self.linhas[-2]))
-        #print(self.escritas) #pega a ultima transicao
+            self.escritasEleituras.append(dados)
+        self.escritasEleituras.append(re.compile(r"(\w+|#)").findall(self.linhas[-2]))
+       # print(self.escritasEleituras) #pega a ultima transicao
         
     
-    def leDesvios(self):
-        self.desvios = []
-        for i in range(22, len(self.linhas) - 2): #6 (a numero de linhas -2)
+    #def leDesvios(self):
+     #   self.desvios = []
+      #  for i in range(22, len(self.linhas) - 2): #6 (a numero de linhas -2)
         #for i in range(4,20):#problema -- tem que comecar quando
-            aux = re.compile(r"(\w+|#)")
-            dados = aux.findall(self.linhas[i][:-1])
+       #     aux = re.compile(r"(\w+|#)")
+        #    dados = aux.findall(self.linhas[i][:-1])
             #print(dados)
-            self.desvios.append(dados)
-        self.desvios.append(re.compile(r"(\w+|#)").findall(self.linhas[-2]))
-        print(self.desvios) #pega a ultima transicao
+         #   self.desvios.append(dados)
+       # self.desvios.append(re.compile(r"(\w+|#)").findall(self.linhas[-2]))
+       # print(self.desvios) #pega a ultima transicao
     
 
