@@ -7,11 +7,11 @@ class Post:
     leituras = None
     escritasEleituras = None
    # desvios = None      #conjunto de todos os desvios
-    partida = None   
+  #  partida = None   
     alfabeto = None #conjunto de todos simbolos do alfabeto + #
   
     
-    def __init__(self, alfabeto,partida,leituras,escritasEleituras):
+    def __init__(self,alfabeto,leituras,escritasEleituras):
         #cria um dicionario com o alfabeto de entrada da MP
         self.alfabeto = []
         for letra in alfabeto:
@@ -19,7 +19,7 @@ class Post:
           #  self.alfabeto[letra] = letra
         
         #cria partida
-        self.partida = (partida[0], partida[1])
+        #self.partida = (partida[0], partida[1])
 
 
         #cria os desvios e as insere na lista de desvios

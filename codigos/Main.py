@@ -16,13 +16,14 @@ def main():
         #saida = "../arquivos/saidas/" + sys.argv[2]
 
         leituraMP = Leitor(entrada)
-        mp = Post(leituraMP.alfabeto,leituraMP.partida,leituraMP.leituras,leituraMP.escritasEleituras)
+        mp = Post(leituraMP.alfabeto,leituraMP.leituras,leituraMP.escritasEleituras)
        # for i in range(len(leituraMP.alfabeto)):
          #   print('alfabeto : ' + leituraMP.alfabeto[i])
        # print('Escritas e leituras')
        # print(leituraMP.escritasEleituras)
 
         conversor = Conversor(mp)
+        #Conversor(mp)
         #Escritor(saida, conversor.turing)
        
 
