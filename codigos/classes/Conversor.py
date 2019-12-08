@@ -43,14 +43,14 @@ class Conversor:
                         if(simbolo == self.post.escritasEleituras[i].simbolo):
                             #print('teste', simbolo, '==',self.post.escritasEleituras[i].simbolo )
                             simbolo_lido = self.converte_simbolos(contador1)
-                            #print(simbolo_lido,' : ',self.post.escritasEleituras[i].simbolo)
+                            print(simbolo_lido,' : ',self.post.escritasEleituras[i].simbolo)
                         else:
                             contador1 = contador1 + 1
                     for simbolo in self.post.alfabeto:
                         if(simbolo == "U"):
-                            print('teste', simbolo, '==',self.post.escritasEleituras[i].simbolo )
+                           # print('teste', simbolo, '==',self.post.escritasEleituras[i].simbolo )
                             simbolo_escrito = self.converte_simbolos(contador2)
-                            print(simbolo_escrito,' : ',self.post.escritasEleituras[i].simbolo)
+                           # print(simbolo_escrito,' : ',self.post.escritasEleituras[i].simbolo)
                         else:
                             contador2 = contador2 + 1
                     
@@ -60,6 +60,8 @@ class Conversor:
                     
 
             elif('escrita' == (str(self.post.escritasEleituras[i].tipo))):
+                print('entrou escrita')
+                '''
                 estado_atual = self.converte_estados(int(self.post.escritasEleituras[i].origem))
                 proximo_estado = self.converte_estados(int(self.post.escritasEleituras[i].destino))
                 #--------------------------------------------------------------------------------
@@ -71,7 +73,7 @@ class Conversor:
                         else:
                             contador3 = contador3 + 1
                 contador3 = 0
-
+                
                 #proximo_estado2 = self.converte_estados(int(19)) #entrada 2
                 proximo_estado2 = self.converte_estados(int(20)) #entrada 1
 
@@ -106,10 +108,12 @@ class Conversor:
                     # para rebobinar a esquerda
                         self.turing.append(proximo_estado2 + ', ' + simbolo_lido + ', ' +  proximo_estado2 + ', ' +  simbolo_lido + ', ' +  'e')
 
-
+                
                 #================================================================================
 
             else:
+                print('entrou desvio')
+                
                 estado_atual = self.converte_estados(int(self.post.escritasEleituras[i].origem))
                 proximo_estado = self.converte_estados(int(self.post.escritasEleituras[i].destino))
                 for simbolo in self.post.alfabeto:
@@ -125,11 +129,11 @@ class Conversor:
 
                 print('-')
                 #print("desvio")
-        
+        '''
         for i in range(len(self.turing)):
             print(self.turing[i])
         
-
+            
         #===========================================
         
 
@@ -153,16 +157,17 @@ class Conversor:
 
     def converte_estados(self,estado):
        # print(len(self.post.escritasEleituras))
-        #for i in range(len(self.post.escritasEleituras)): 
-          #  lista_estados = self.post.escritasEleituras[i].origem
+       # for i in range(len(self.post.escritasEleituras)): 
+         #   lista_estados = self.post.escritasEleituras[i].origem
 
-        #print(lista_estados)
+       # print(lista_estados)
         #print('lista', set(lista_estados))
-        #num_estado =( len(set(lista_estados))+1)
+       # num_estado =( len(set(lista_estados))+1)
        
        # num_estado = 19 # colocar entrada 2
         num_estado = 20              # colocar entrada 1
-        #print("Número de estados =", num_estado)
+       # num_estado = 9 #entrada3
+        print("Número de estados1 =", num_estado)
         qnt_Simbestados = round(math.log(int(num_estado), 2) + 0.5)
         #print("Número de simbolos para os estados da máquina de turing = ",qnt_Simbestados)
         marcador_inicialEstados = "q"

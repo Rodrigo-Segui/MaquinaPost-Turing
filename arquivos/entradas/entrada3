@@ -1,0 +1,16 @@
+{0, 1, #, U}
+(1, 4)
+{
+	(0, #, 1, escrita),
+	(1, 0, 2, leitura), 
+	(2, 0, 1, escrita), 
+	(1, 1, 3, leitura), 
+	(1, #, 7, leitura), 
+	(3, 1, 4, escrita), 
+	(7, U, 8, decisao), 
+	(4, 0, 5, leitura), 
+	(4, #, 6, leitura), 
+	(5, 0, 1, escrita), 
+	(6, U, 8, decisao) 
+}
+

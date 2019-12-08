@@ -1,0 +1,19 @@
+{a, b, #, U}
+(1, 2, 6)
+{
+	(0, #, 1, escrita),
+	(1, a, 2, leitura), 
+	(1, b, 4, leitura), 
+	(1, #, 5, leitura), 
+    (4, U, 4, decisao),
+    (5, U, 5, decisao),
+	(2, a, 3, leitura), 
+    (3, a, 2, escrita),
+    (2, #, 4, leitura),
+    (2, b, 6, leitura), 
+    (6, a, 4, leitura), 
+	(6, b, 7, leitura),
+    (7, b, 6, escrita), 
+	(6, #, 0, leitura)
+}
+
