@@ -27,6 +27,7 @@ class Conversor:
         contador3 = 0
         contador4 = 0
         contador5 = 0
+        contadorEscritas = 7
         #print(len(self.post.escritasEleituras))
         #if('escrita' == (str(self.post.escritasEleituras[0].tipo))):
         #    print("entrou")
@@ -58,9 +59,66 @@ class Conversor:
                     contador2 = 0
                     self.turing.append(estado_atual + ', ' + simbolo_lido + ', ' +  proximo_estado + ', ' +  simbolo_escrito + ', ' +  'd')
                     
-
+            elif('inicio' == (str(self.post.escritasEleituras[i].tipo))):
+                for simbolo in self.post.alfabeto:
+                        if(simbolo != '#' and simbolo != 'U'):
+                            estado_atual = self.converte_estados(int(self.post.escritasEleituras[i].origem))
+                            proximo_estado = self.converte_estados(int(self.post.escritasEleituras[i].origem))
+                            simbolo_lido = simbolo
+                            simbolo_escrito = simbolo
+                            self.turing.append(estado_atual + ', ' + simbolo_lido + ', ' +  proximo_estado + ', ' +  simbolo_escrito + ', ' +  'd')
+                        if(simbolo == 'U'):
+                            estado_atual = self.converte_estados(int(self.post.escritasEleituras[i].origem))
+                            contadorEscritas = contadorEscritas + 1
+                            proximo_estado = self.converte_estados(int(contadorEscritas))
+                            simbolo_lido = simbolo
+                            simbolo_escrito = '#'
+                            self.turing.append(estado_atual + ', ' + simbolo_lido + ', ' +  proximo_estado + ', ' +  simbolo_escrito + ', ' +  'e')
+                
+                for simbolo in self.post.alfabeto:
+                        if(simbolo != '#' and simbolo != 'U'):
+                            estado_atual = self.converte_estados(int(contadorEscritas))
+                            proximo_estado = self.converte_estados(int(contadorEscritas))
+                            simbolo_lido = simbolo
+                            simbolo_escrito = simbolo
+                            self.turing.append(estado_atual + ', ' + simbolo_lido + ', ' +  proximo_estado + ', ' +  simbolo_escrito + ', ' +  'e')
+                        if(simbolo == 'U'):
+                            estado_atual = self.converte_estados(int(contadorEscritas))
+                            proximo_estado = self.converte_estados(int(self.post.escritasEleituras[i].destino))
+                            simbolo_lido = simbolo
+                            simbolo_escrito = simbolo
+                            self.turing.append(estado_atual + ', ' + simbolo_lido + ', ' +  proximo_estado + ', ' +  simbolo_escrito + ', ' +  'd')
+            
             elif('escrita' == (str(self.post.escritasEleituras[i].tipo))):
-                print('entrou escrita')
+                simboloEscrita = self.post.escritasEleituras[i].simbolo
+                for simbolo in self.post.alfabeto:
+                        if(simbolo != 'U'):
+                            estado_atual = self.converte_estados(int(self.post.escritasEleituras[i].origem))
+                            proximo_estado = self.converte_estados(int(self.post.escritasEleituras[i].origem))
+                            simbolo_lido = simbolo 
+                            simbolo_escrito = simbolo
+                            self.turing.append(estado_atual + ', ' + simbolo_lido + ', ' +  proximo_estado + ', ' +  simbolo_escrito + ', ' +  'd')
+                        if(simbolo == 'U'):
+                            estado_atual = self.converte_estados(int(self.post.escritasEleituras[i].origem))
+                            contadorEscritas = contadorEscritas + 1
+                            proximo_estado = self.converte_estados(int(contadorEscritas))
+                            simbolo_lido = simbolo
+                            simbolo_escrito = simboloEscrita
+                            self.turing.append(estado_atual + ', ' + simbolo_lido + ', ' +  proximo_estado + ', ' +  simbolo_escrito + ', ' +  'e')
+                for simbolo in self.post.alfabeto:
+                        if(simbolo != 'U'):
+                            estado_atual = self.converte_estados(int(contadorEscritas))
+                            proximo_estado = self.converte_estados(int(contadorEscritas))
+                            simbolo_lido = simbolo
+                            simbolo_escrito = simbolo
+                            self.turing.append(estado_atual + ', ' + simbolo_lido + ', ' +  proximo_estado + ', ' +  simbolo_escrito + ', ' +  'e')
+                        if(simbolo == 'U'):
+                            estado_atual = self.converte_estados(int(contadorEscritas))
+                            proximo_estado = self.converte_estados(int(self.post.escritasEleituras[i].destino))
+                            simbolo_lido = simbolo
+                            simbolo_escrito = simbolo
+                            self.turing.append(estado_atual + ', ' + simbolo_lido + ', ' +  proximo_estado + ', ' +  simbolo_escrito + ', ' +  'd')
+               
                 '''
                 estado_atual = self.converte_estados(int(self.post.escritasEleituras[i].origem))
                 proximo_estado = self.converte_estados(int(self.post.escritasEleituras[i].destino))
@@ -167,7 +225,7 @@ class Conversor:
        # num_estado = 19 # colocar entrada 2
         num_estado = 20              # colocar entrada 1
        # num_estado = 9 #entrada3
-        print("Número de estados1 =", num_estado)
+        #print("Número de estados1 =", num_estado)
         qnt_Simbestados = round(math.log(int(num_estado), 2) + 0.5)
         #print("Número de simbolos para os estados da máquina de turing = ",qnt_Simbestados)
         marcador_inicialEstados = "q"
