@@ -18,7 +18,6 @@ def main():
         mp = Post(leituraMP.alfabeto,leituraMP.numerosLED,leituraMP.escritasEleituras,leituraMP.numeroestados)
 
         conversor = Conversor(mp)
-        #print(conversor.turing)
         Escritor(saida, conversor.turing)
        
 

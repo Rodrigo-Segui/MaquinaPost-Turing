@@ -1,10 +1,10 @@
 //Segue abaixo como foi definida a máquina de POST
 
-{a, B, c, #, b,}	                  //aldabeto: todos os simbolos utiliza dos na MT + #
-(9,2,2)                               //numero de leituras, numero de escrita, numero de decicoes            
-7 // (numero de estados-1) / rejeita ou aceita -- é um estado cada (mesmo se tiver mais de um)
-{	//conjunto com todas as escritas e leituras
-	(0, #, 1, inicio),
+{a, b, #, U}	                  //alfabeto: todos os simbolos utiliza dos na MT + U
+(9,2,2)                           //numero de leituras, numero de escrita, numero de decicoes            
+8                                 // (numero de estados) / rejeita ou aceita -- é um estado cada (mesmo se tiver mais de um)
+{	                              //conjunto com todas as escritas,leituras, decisões e o inicio
+	(0, #, 1, inicio),            //(estado inicial, simbolo, estado final, leitura)
 	(1, a, 2, leitura), 
 	(1, b, 4, leitura), 
 	(1, #, 5, leitura), 
@@ -21,13 +21,5 @@
 }
 
 
-////ENTRADA 4 SE REFERE A^nB^n
-////ENTRADA 5 mesmo numero de 0 e 1
-
- //a escrita é composta por um identificardor
- //unico, um simbolo e um id de destino
-// O id de valor 1 pertence à primeira escrita do
-simbolo #
-O identificador de destino pode assumir os  
-mesmos que um identificador de destino de um
-desvio, definido logo abiaxo 
+////ENTRADA 1 SE REFERE A^nB^n
+////ENTRADA 2 mesmo numero de 0 e 1

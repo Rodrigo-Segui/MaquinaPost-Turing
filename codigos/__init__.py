@@ -1,1 +1,1 @@
-__all__ = ['classes', 'exceptions']
+__all__ = ['classes']
