@@ -1,0 +1,24 @@
+{0, 1, #, U}
+(12, 4, 2)
+11
+{
+	(0, #, 1, inicio),
+	(1, 0, 2, leitura), 
+	(1, 1, 8, leitura), 
+	(1, #, 10, leitura), 
+    (10, U, 10, decisao),
+	(2, 0, 3, leitura), 
+    (3, 0, 2, escrita),
+    (2, #, 7, leitura),
+    (2, 1, 4, leitura), 
+    (7, U, 7, decisao), 
+	(4, 0, 5, leitura),
+    (4, 1, 6, leitura), 
+	(4, #, 0, leitura),
+    (5, 0, 4, escrita),
+    (6, 1, 4, escrita),
+    (8, 0, 4, leitura),
+    (8, 1, 9, leitura),
+    (8, #, 7, leitura),
+    (9, 1, 8, escrita)
+}

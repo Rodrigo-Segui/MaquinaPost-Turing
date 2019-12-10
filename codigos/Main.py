@@ -3,6 +3,7 @@ import sys
 from classes.Leitor import Leitor
 from classes.post.Post import Post
 from classes.Conversor import Conversor
+from classes.Escritor import Escritor
 def main():
         if(len(sys.argv) != 3):
             print("Modo de execucao: ./Main.py <arquivo-de-entrada> <arquivo-de-saida>")
@@ -11,11 +12,14 @@ def main():
             return
 
         entrada = "../arquivos/entradas/" + sys.argv[1]
+        saida = "../arquivos/saidas/" + sys.argv[2]
 
         leituraMP = Leitor(entrada)
         mp = Post(leituraMP.alfabeto,leituraMP.numerosLED,leituraMP.escritasEleituras,leituraMP.numeroestados)
 
         conversor = Conversor(mp)
+        #print(conversor.turing)
+        Escritor(saida, conversor.turing)
        
 
 main()

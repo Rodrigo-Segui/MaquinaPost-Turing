@@ -15,7 +15,8 @@ class Conversor:
 
 
     def Resolve(self):
-        contadorEscritas = int(self.post.numeroestados[0])
+        contadorEscritas = int(self.post.numeroestados[0]) - 1
+        print('www',contadorEscritas)
         for i in range(len(self.post.escritasEleituras)):
             if('leitura' == (str(self.post.escritasEleituras[i].tipo))):                   
                     estado_atual = self.converte_estados(int(self.post.escritasEleituras[i].origem))
@@ -122,6 +123,8 @@ class Conversor:
 
     def converte_estados(self,estado):
         num_estado = (int(self.post.numerosLED[1]) + 2 + int(self.post.numeroestados[0]))
+        
+        print('--------------',num_estado, '--------------------')
         qnt_Simbestados = round(math.log(int(num_estado), 2) + 0.5)
         marcador_inicialEstados = "q"
         estado_transformado = marcador_inicialEstados + bin(estado)[2:].zfill(qnt_Simbestados)
