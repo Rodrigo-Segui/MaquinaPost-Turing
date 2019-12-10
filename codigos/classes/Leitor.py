@@ -3,8 +3,8 @@ import re
 class Leitor:
     arquivo = None
     linhas = None
-   # partida = None
-    leituras = None
+    numeroestados = None
+    numerosLED = None
     escritasEleituras = None
    # desvios = None
     alfabeto = None
@@ -21,8 +21,8 @@ class Leitor:
         while '' in self.linhas: #cria uma lista de linhas
             self.linhas.remove('')
         self.leAlfabeto()
-       # self.lePartida()
-        self.leLeituras()
+        self.leNumeroEstados()
+        self.leNumerosLED()
         self.leEscritasELeituras()
        # self.leDesvios()
 
@@ -33,22 +33,22 @@ class Leitor:
         #print(len(self.alfabeto))
     
     
-    #def lePartida(self):
-     #   aux = re.compile(r"(\d+)")
-      #  self.partida = aux.findall(self.linhas[1]) #lista com estado de partida =0 e destino = 1
-        #print(self.partida)# lista com estados
+    def leNumeroEstados(self):
+         aux = re.compile(r"(\d+)")
+         self.numeroestados = aux.findall(self.linhas[2]) #numero de estados
+         print(self.numeroestados)
     
 
-    def leLeituras(self):
+    def leNumerosLED(self):
         aux = re.compile(r"(\d+)")
-        self.leituras= aux.findall(self.linhas[1]) #lista com estado de leituras
+        self.numerosLED= aux.findall(self.linhas[1]) #lista com estado de leituras
     #    print(self.leituras)# lista com estados
     
     
     def leEscritasELeituras(self):
         self.escritasEleituras = []
         dados = 'jkj'
-        for i in range(3, len(self.linhas) - 2): #6 (a numero de linhas -2)
+        for i in range(4, len(self.linhas) - 2): #6 (a numero de linhas -2)
         #for i in range(4,20):#problema -- tem que parar quando acabar escritas
             aux = re.compile(r"(\w+|#)")
             dados = aux.findall(self.linhas[i][:-1])

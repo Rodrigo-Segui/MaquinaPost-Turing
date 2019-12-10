@@ -1,4 +1,4 @@
-class Leitura:
+class numerosLED:
     id = None
     
     def __init__(self, id):

@@ -1,17 +1,17 @@
 
 
 
-from classes.post.Leitura import Leitura
+from classes.post.numerosLED import numerosLED
 from classes.post.EscritasELeituras import EscritasELeituras
 class Post:
-    leituras = None
+    numerosLED = None
     escritasEleituras = None
    # desvios = None      #conjunto de todos os desvios
-  #  partida = None   
+    numeroestados = None   
     alfabeto = None #conjunto de todos simbolos do alfabeto + #
   
     
-    def __init__(self,alfabeto,leituras,escritasEleituras):
+    def __init__(self,alfabeto,numerosLED,escritasEleituras,numeroestados):
         #cria um dicionario com o alfabeto de entrada da MP
         self.alfabeto = []
         for letra in alfabeto:
@@ -19,13 +19,14 @@ class Post:
           #  self.alfabeto[letra] = letra
         
         #cria partida
-        #self.partida = (partida[0], partida[1])
+        self.numeroestados = numeroestados
+        self.numerosLED = numerosLED
 
 
         #cria os desvios e as insere na lista de desvios
-        #self.desvios = []
-        #for desvio in desvios:
-         #   self.desvios.append(Desvio(desvio[0], desvio[1], desvio[2]))
+        #self.numerosLED = []
+        #for n in self.numerosLED :
+         #   self.numerosLED.append(Desvio(desvio[0], desvio[1], desvio[2]))
 
         #cria as escritas e leituras uma lista leituras
         self.escritasEleituras = []
